@@ -20,10 +20,14 @@
   <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/poole.css">
   <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css">
   <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/search.css">
   {{ partial "head_fonts.html" . }}
 
   <!-- Icons -->
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <script src="/js/lunr.min.js"></script>
+  <script src="/js/search.js"></script>
 
   <!-- RSS etc -->
   {{ range .AlternativeOutputFormats -}}

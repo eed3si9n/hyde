@@ -1,4 +1,6 @@
 {{ define "main" -}}
+{{ partial "search_results.html" . }}
+
 <div class="posts">
 {{ range .Site.RegularPages -}}
 {{ if eq .Type "story" }}

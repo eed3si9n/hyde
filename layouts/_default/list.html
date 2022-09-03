@@ -1,4 +1,6 @@
 {{ define "main" -}}
+{{ partial "search_results.html" . }}
+
 <ul class="posts">
 {{ range .Data.Pages -}}
   <li>
