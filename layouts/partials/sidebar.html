@@ -9,7 +9,17 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="{{ .Site.BaseURL }}">Home</a> </li>
+        {{ if .IsTranslated }}
+            {{ range .Translations }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Language.LanguageName }}: {{ .Title }}{{ if .IsPage }} {{ end }}</a>
+            </li>
+            {{ end }}
+        {{ else }}
+            {{ range $.Site.Home.AllTranslations }}
+              <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+            {{ end }}
+        {{ end }}
         {{ range .Site.Menus.main -}}
           <li><a href="{{.URL}}"> {{ .Name }} </a></li>
         {{- end }}
